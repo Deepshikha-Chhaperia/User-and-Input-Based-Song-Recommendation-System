@@ -11,11 +11,6 @@ The primary objective of the Spotify Recommendation System is to create a seamle
 ### Problem Statement
 The challenge addressed by the Spotify Recommendation System is the overwhelming amount of music available to users on streaming platforms. Navigating this vast musical landscape to discover new songs and artists that resonate with individual tastes can be cumbersome. The system seeks to alleviate this challenge by providing efficient and insightful recommendations, ultimately enhancing the overall user experience.
 
-### Key Features
-* Content-based recommendation: Leverages song features and genre data to recommend similar songs based on a selected track or artist.
-* User-based recommendation: Provides personalized song and artist recommendations based on user interactions and preferences.
-* Explore top tracks, artists, and genres: Displays visualizations of the most popular songs, artists, and genres based on the data.
-
 ### Requirements:
 * Pandas
 * Numpy
@@ -29,7 +24,7 @@ The challenge addressed by the Spotify Recommendation System is the overwhelming
 The system involves the preprocessing and transformation of the artists and tracks data to create an optimized dataset from which recommendations can be generated. This involves the extraction of song features, genre information, and popularity ratings.
 
 ### Content-Based Recommendation
-In content-based recommendation, the system uses cosine similarity to find similar songs or artists based on selected features or user preferences. This involves calculating the similarity scores and providing personalized recommendations based on the data.
+In content or item-based recommendation, the system uses cosine similarity to find similar songs or artists based on selected features or user preferences. This involves calculating the similarity scores and providing personalized recommendations based on the data.
 
 ### User-Based Recommendation
 The user-based recommendation system leverages interaction data to personalize song and artist recommendations based on user history and preferences. At its core, the system uses collaborative filtering techniques to generate relevant recommendations.
