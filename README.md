@@ -21,16 +21,16 @@ The challenge addressed by the Spotify Recommendation System is the overwhelming
 * Wordcloud
 
 ### Data Preparation
-The system involves the preprocessing and transformation of the artists and tracks data to create an optimized dataset from which recommendations can be generated. This involves the extraction of song features, genre information, and popularity ratings.
+* The system involves the preprocessing and transformation of the artists and tracks data to create an optimized dataset from which recommendations can be generated. This involves the extraction of song features, genre information, and popularity ratings.
 
 ### Content-Based Recommendation
-In content or item-based recommendation, the system uses cosine similarity to find similar songs or artists based on selected features or user preferences. This involves calculating the similarity scores and providing personalized recommendations based on the data.
+* In content or item-based recommendation, the system uses cosine similarity to find similar songs or artists based on selected features or user preferences. This involves calculating the similarity scores and providing personalized recommendations based on the data.
 
 ### User-Based Recommendation
-The user-based recommendation system leverages interaction data to personalize song and artist recommendations based on user history and preferences. At its core, the system uses collaborative filtering techniques to generate relevant recommendations.
+* The user-based recommendation system leverages interaction data to personalize song and artist recommendations based on user history and preferences. At its core, the system uses collaborative filtering techniques to generate relevant recommendations.
 
 ### Top Songs, Artists, and Genres
-The system provides insights into the most popular songs, artists, and genres in the Spotify dataset. Visualizations are used to display the top tracks, artists, and genres making the information more accessible to users.
+* The system provides insights into the most popular songs, artists, and genres in the Spotify dataset. Visualizations are used to display the top tracks, artists, and genres making the information more accessible to users.
 
 ### Usage
 Once the application is running, users can interact with the Spotify Recommendation System through a user-friendly interface. The system allows users to:
