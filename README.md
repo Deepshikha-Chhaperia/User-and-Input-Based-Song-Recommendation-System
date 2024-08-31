@@ -1,40 +1,116 @@
-# User-and-Input-Based-Song-Recommendation-System
+# Spotify Recommender System
 
-## Spotify Recommendation System
+## Overview
 
-### Description
-The Spotify Recommendation System is an advanced machine learning-based application that provides personalized music recommendations to users based on their preferences. Leveraging various data sources such as tracks, artists, and genres, the system employs content-based and user-based recommendation algorithms to offer tailored song and artist suggestions.
+This project provides a Spotify-like recommendation system for songs and artists using a combination of text and numeric data. It leverages cosine similarity to compare songs and artists based on their genres and audio features. The recommender system can suggest similar songs and artists based on a given input song, allowing users to discover new music that matches their tastes.
 
-### Objective
-The primary objective of the Spotify Recommendation System is to create a seamless and personalized music discovery experience for users. By analyzing user preferences and historical interactions, the system aims to deliver accurate and relevant song and artist recommendations, enhancing user engagement and satisfaction.
+## Features
 
-### Problem Statement
-The challenge addressed by the Spotify Recommendation System is the overwhelming amount of music available to users on streaming platforms. Navigating this vast musical landscape to discover new songs and artists that resonate with individual tastes can be cumbersome. The system seeks to alleviate this challenge by providing efficient and insightful recommendations, ultimately enhancing the overall user experience.
+- **Song Recommendation**: Recommends songs similar to a given song based on genres and audio features.
+- **Artist Recommendation**: Recommends artists similar to a given artist based on genres and popularity.
+- **Complete Spotify Recommender**: Combines both song and artist recommendations into a single function, offering a comprehensive music discovery experience.
 
-### Requirements:
-* Pandas
-* Numpy
-* Scikit-learn
-* Matplotlib
-* Implicit
-* Tqdm
-* Wordcloud
+## Setup
 
-### Data Preparation
-* The system involves the preprocessing and transformation of the artists and tracks data to create an optimized dataset from which recommendations can be generated. This involves the extraction of song features, genre information, and popularity ratings.
+### Prerequisites
 
-### Content-Based Recommendation
-* In content or item-based recommendation, the system uses cosine similarity to find similar songs or artists based on selected features or user preferences. This involves calculating the similarity scores and providing personalized recommendations based on the data.
+- Python 3.x
+- Jupyter Notebook or any Python IDE
+- Required Libraries: 
+  - `pandas`
+  - `numpy`
+  - `sklearn` (Scikit-Learn)
 
-### User-Based Recommendation
-* The user-based recommendation system leverages interaction data to personalize song and artist recommendations based on user history and preferences. At its core, the system uses collaborative filtering techniques to generate relevant recommendations.
+### Installing Required Libraries
 
-### Top Songs, Artists, and Genres
-* The system provides insights into the most popular songs, artists, and genres in the Spotify dataset. Visualizations are used to display the top tracks, artists, and genres making the information more accessible to users.
+If you do not have the required libraries installed, you can install them using pip:
 
-### Usage
-Once the application is running, users can interact with the Spotify Recommendation System through a user-friendly interface. The system allows users to:
+```bash
+pip install pandas numpy scikit-learn
+```
 
-* Enter a song or artist name to receive content-based recommendations.
-* Interact with historical data to receive user-based recommendations.
-* Explore top songs, artists, and genres through intuitive visualizations.
+## Data Setup
+
+The recommendation system relies on two main DataFrames:
+
+1. **`song_library`**: A DataFrame containing details of songs including their genres, audio features, and other metadata.
+2. **`artist_library`**: A DataFrame containing details of artists including their genres, popularity, followers, and other metadata.
+
+Make sure these DataFrames are loaded in your environment with the following structure:
+
+### `song_library` DataFrame
+
+| Column Name       | Description                        |
+|-------------------|------------------------------------|
+| `name`            | Name of the song                   |
+| `artists`         | Artists contributing to the song   |
+| `genres`          | Genres associated with the song    |
+| `release_year`    | Year the song was released         |
+| `duration_s`      | Duration of the song in seconds    |
+| `popularity`      | Popularity score of the song       |
+| `danceability`    | Danceability feature of the song   |
+| `energy`          | Energy feature of the song         |
+| `key`             | Musical key of the song            |
+| `loudness`        | Loudness feature of the song       |
+| `mode`            | Mode feature of the song           |
+| `speechiness`     | Speechiness feature of the song    |
+| `acousticness`    | Acousticness feature of the song   |
+| `instrumentalness`| Instrumentalness feature of the song|
+| `liveness`        | Liveness feature of the song       |
+| `valence`         | Valence feature of the song        |
+| `tempo`           | Tempo feature of the song          |
+
+### `artist_library` DataFrame
+
+| Column Name       | Description                        |
+|-------------------|------------------------------------|
+| `id`              | Unique identifier of the artist    |
+| `followers`       | Number of followers of the artist  |
+| `genres`          | Genres associated with the artist  |
+| `name`            | Name of the artist                 |
+| `popularity`      | Popularity score of the artist     |
+
+## Usage
+
+### Song Recommender
+
+The `song_recommender` function recommends similar songs based on the given song name. It compares the genres and audio features of the input song with other songs in the `song_library` and returns the top 5 most similar songs.
+
+#### Example
+
+```python
+recommended_songs = song_recommender('Hail to the King')
+print(recommended_songs)
+```
+
+## Artist Recommender
+
+The `artist_recommender` function recommends similar artists based on the given artist name. It compares the genres, popularity, and follower count of the input artist with other artists in the `artist_library` and returns the top 5 most similar artists.
+
+### Example
+
+```python
+recommended_artists = artist_recommender('Def Leppard')
+print(recommended_artists)
+```
+
+## Complete Spotify Recommender
+
+The `spotify_recommender` function combines the song and artist recommendation features. It takes a song name as input, recommends similar songs, and then recommends artists based on the contributing artists of the input song.
+
+### Example
+
+```python
+spotify_recommender('Nero Forte')
+```
+This function will output a list of songs similar to "Nero Forte" and also recommend artists similar to those who contributed to the song.
+
+### Notes
+
+- If the input song or artist is not found in the library, the functions will display an appropriate message.
+- The similarity score is calculated as the average of the cosine similarity between text vectors (genres) and numeric vectors (audio features or artist metrics).
+
+```
+
+
+
