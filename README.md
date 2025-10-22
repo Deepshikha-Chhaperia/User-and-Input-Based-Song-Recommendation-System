@@ -111,3 +111,13 @@ This function will output a list of songs similar to "Nero Forte" and also recom
 - The similarity score is calculated as the average of the cosine similarity between text vectors (genres) and numeric vectors (audio features or artist metrics).
 
 
+
+![1745931641890](https://github.com/user-attachments/assets/5accccbb-314e-4f02-909b-aed3f5df3ccb)
+
+
+
+![1745931720168](https://github.com/user-attachments/assets/be58dfad-417a-4834-ae83-1b2603b6f2b6)
+
+
+
+![1745931810219](https://github.com/user-attachments/assets/a925f74a-b894-40f2-acad-ec6a5fd70ab0)
